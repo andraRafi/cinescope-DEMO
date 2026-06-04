@@ -1,0 +1,518 @@
+/* ================================
+   style.css — Cinescope
+   Urutan:
+   1. Reset / Base
+   2. CSS Variables
+   3. Typography
+   4. Layout (Container, Navbar, Hero)
+   5. Components (Film, Genre, Ulasan)
+   6. Footer
+   7. Media Query
+   ================================ */
+
+
+/* ================================
+   1. RESET / BASE
+   ================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--warna-bg);
+  color: var(--warna-teks);
+  font-family: var(--font-utama);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ================================
+   2. CSS VARIABLES
+   ================================ */
+:root {
+  --warna-bg: #0d0d0d;
+  --warna-permukaan: #1a1a1a;
+  --warna-border: #2e2e2e;
+  --warna-gold: #c9a84c;
+  --warna-teks: #f0ece4;
+  --warna-teks-redup: #888880;
+
+  --font-utama: 'Georgia', serif;
+  --font-body: 'Helvetica Neue', Arial, sans-serif;
+
+  --container-max: 1100px;
+  --jarak-section: 5rem;
+}
+
+
+/* ================================
+   3. TYPOGRAPHY
+   ================================ */
+h1, h2, h3 {
+  font-family: var(--font-utama);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.2rem; }
+
+p {
+  font-family: var(--font-body);
+  color: var(--warna-teks-redup);
+}
+
+
+/* ================================
+   4. LAYOUT
+   ================================ */
+
+/* Container */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(13, 13, 13, 0.9);
+  border-bottom: 1px solid var(--warna-border);
+  backdrop-filter: blur(8px);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar__logo {
+  font-family: var(--font-utama);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--warna-teks);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar__links a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--warna-teks-redup);
+  transition: color 0.2s;
+}
+
+.navbar__links a:hover {
+  color: var(--warna-gold);
+}
+
+.navbar__hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--warna-teks);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 64px;
+  border-bottom: 1px solid var(--warna-border);
+}
+
+.hero__content {
+  max-width: 650px;
+  padding: 4rem 1.5rem;
+}
+
+.hero__tag {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warna-gold);
+  margin-bottom: 1rem;
+}
+
+.hero__judul {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color: var(--warna-teks);
+}
+
+.hero__judul span {
+  color: var(--warna-gold);
+  font-style: italic;
+}
+
+.hero__deskripsi {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.hero__tombol {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Section umum */
+.section {
+  padding: var(--jarak-section) 0;
+}
+
+.section--gelap {
+  background-color: var(--warna-permukaan);
+  border-top: 1px solid var(--warna-border);
+  border-bottom: 1px solid var(--warna-border);
+}
+
+.section__judul {
+  color: var(--warna-teks);
+  margin-bottom: 0.4rem;
+}
+
+.section__deskripsi {
+  margin-bottom: 2.5rem;
+}
+
+
+/* ================================
+   5. COMPONENTS
+   ================================ */
+
+/* Tombol */
+.tombol {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tombol--utama {
+  background-color: var(--warna-gold);
+  color: #0d0d0d;
+}
+
+.tombol--utama:hover {
+  background-color: #e2c97e;
+}
+
+.tombol--outline {
+  border: 1px solid var(--warna-border);
+  color: var(--warna-teks);
+}
+
+.tombol--outline:hover {
+  border-color: var(--warna-gold);
+  color: var(--warna-gold);
+}
+
+/* Film Grid — CSS Grid */
+.film__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.film__card {
+  background-color: var(--warna-permukaan);
+  border: 1px solid var(--warna-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.film__card:hover {
+  transform: translateY(-4px);
+  border-color: var(--warna-gold);
+}
+
+.film__poster {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0.75rem;
+}
+
+.film__poster--1 { background: linear-gradient(135deg, #2a1a06, #0d0500); }
+.film__poster--2 { background: linear-gradient(135deg, #06101a, #020810); }
+.film__poster--3 { background: linear-gradient(135deg, #1a0606, #0d0505); }
+.film__poster--4 { background: linear-gradient(135deg, #1a0808, #0d0505); }
+.film__poster--5 { background: linear-gradient(135deg, #0a0610, #050310); }
+.film__poster--6 { background: linear-gradient(135deg, #061a0a, #030d05); }
+
+.film__rating {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: bold;
+  color: var(--warna-gold);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.film__genre {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--warna-teks-redup);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.film__info {
+  padding: 1.25rem;
+}
+
+.film__info h3 {
+  color: var(--warna-teks);
+  margin-bottom: 0.25rem;
+}
+
+.film__meta {
+  font-size: 0.78rem;
+  margin-bottom: 0.5rem;
+}
+
+.film__info p:not(.film__meta) {
+  font-size: 0.88rem;
+  margin-bottom: 0.75rem;
+}
+
+.film__link {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--warna-gold);
+}
+
+.film__link:hover {
+  text-decoration: underline;
+}
+
+/* Genre Grid — CSS Flexbox */
+.genre__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.genre__item {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 1rem;
+  background-color: #111111;
+  border: 1px solid var(--warna-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--warna-teks);
+  text-align: center;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.genre__item span {
+  font-size: 0.75rem;
+  color: var(--warna-teks-redup);
+}
+
+.genre__item:hover {
+  border-color: var(--warna-gold);
+  background-color: rgba(201, 168, 76, 0.08);
+}
+
+/* Ulasan Grid — CSS Grid */
+.ulasan__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.ulasan__card {
+  background-color: var(--warna-permukaan);
+  border: 1px solid var(--warna-border);
+  border-radius: 8px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ulasan__card blockquote {
+  font-family: var(--font-utama);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--warna-teks);
+  line-height: 1.7;
+}
+
+.ulasan__card footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ulasan__card footer strong {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--warna-teks);
+}
+
+.ulasan__card footer span {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--warna-teks-redup);
+}
+
+.ulasan__bintang {
+  color: var(--warna-gold) !important;
+  margin-top: 0.25rem;
+}
+
+
+/* ================================
+   6. FOOTER
+   ================================ */
+.footer {
+  background-color: var(--warna-permukaan);
+  border-top: 1px solid var(--warna-border);
+  padding: 3rem 0;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.footer__logo {
+  font-family: var(--font-utama);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--warna-teks);
+}
+
+.footer__nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__nav a {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--warna-teks-redup);
+  transition: color 0.2s;
+}
+
+.footer__nav a:hover {
+  color: var(--warna-gold);
+}
+
+.footer__copy {
+  font-size: 0.82rem;
+  margin-top: 0.5rem;
+}
+
+
+/* ================================
+   7. MEDIA QUERY
+   ================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  h1 { font-size: 2.2rem; }
+
+  .film__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ulasan__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+
+  .navbar__links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background-color: #0d0d0d;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--warna-border);
+    gap: 1rem;
+  }
+
+  .navbar__links.aktif {
+    display: flex;
+  }
+
+  .navbar__hamburger {
+    display: block;
+  }
+
+  .hero__tombol {
+    flex-direction: column;
+  }
+
+  .film__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .genre__item {
+    flex: 0 0 calc(50% - 0.5rem);
+    min-width: unset;
+  }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinescope — Dunia Film</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a href="#" class="navbar__logo">◈ Cinescope</a>
+
+        <nav>
+          <ul class="navbar__links" id="navLinks">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#film">Film</a></li>
+            <li><a href="#genre">Genre</a></li>
+            <li><a href="#ulasan">Ulasan</a></li>
+          </ul>
+        </nav>
+
+        <button class="navbar__hamburger" id="hamburger" aria-label="Buka menu">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- HERO SECTION -->
+      <section class="hero" id="hero">
+        <div class="container hero__content">
+          <p class="hero__tag">Editor's Pick · Juni 2026</p>
+          <h1 class="hero__judul">Temukan Film <span>Terbaik</span> Dunia</h1>
+          <p class="hero__deskripsi">
+            Koleksi film pilihan dari seluruh penjuru dunia. Dari sinema art-house
+            hingga blockbuster — semuanya ada di sini.
+          </p>
+          <div class="hero__tombol">
+            <a href="#film" class="tombol tombol--utama">Jelajah Film</a>
+            <a href="#ulasan" class="tombol tombol--outline">Baca Ulasan</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILM SECTION -->
+      <section class="section" id="film">
+        <div class="container">
+          <h2 class="section__judul">Film Pilihan Bulan Ini</h2>
+          <p class="section__deskripsi">Kurasi terbaik dari tim editorial Cinescope.</p>
+
+          <div class="film__grid">
+
+            <article class="film__card">
+              <div class="film__poster film__poster--1">
+                <span class="film__rating">★ 9.3</span>
+                <span class="film__genre">Drama</span>
+              </div>
+              <div class="film__info">
+                <h3>The Grand Illusion</h3>
+                <p class="film__meta">Jean Renoir · 1937 · Prancis</p>
+                <p>Mahakarya tentang perang, kelas sosial, dan makna kebebasan.</p>
+                <a href="#" class="film__link">Baca Ulasan →</a>
+              </div>
+            </article>
+
+            <article class="film__card">
+              <div class="film__poster film__poster--2">
+                <span class="film__rating">★ 8.9</span>
+                <span class="film__genre">Sci-Fi</span>
+              </div>
+              <div class="film__info">
+                <h3>Stalker</h3>
+                <p class="film__meta">Tarkovsky · 1979 · USSR</p>
+                <p>Perjalanan filosofis menembus "Zona" misterius yang menantang iman.</p>
+                <a href="#" class="film__link">Baca Ulasan →</a>
+              </div>
+            </article>
+
+            <article class="film__card">
+              <div class="film__poster film__poster--3">
+                <span class="film__rating">★ 8.7</span>
+                <span class="film__genre">Thriller</span>
+              </div>
+              <div class="film__info">
+                <h3>Parasite</h3>
+                <p class="film__meta">Bong Joon-ho · 2019 · Korea</p>
+                <p>Satire gelap tentang kesenjangan kelas, pemenang Palme d'Or & Oscar.</p>
+                <a href="#" class="film__link">Baca Ulasan →</a>
+              </div>
+            </article>
+
+            <article class="film__card">
+              <div class="film__poster film__poster--4">
+                <span class="film__rating">★ 9.1</span>
+                <span class="film__genre">Crime</span>
+              </div>
+              <div class="film__info">
+                <h3>The Godfather</h3>
+                <p class="film__meta">Coppola · 1972 · USA</p>
+                <p>Epik keluarga mafia yang mendefinisikan ulang bahasa sinema Hollywood.</p>
+                <a href="#" class="film__link">Baca Ulasan →</a>
+              </div>
+            </article>
+
+            <article class="film__card">
+              <div class="film__poster film__poster--5">
+                <span class="film__rating">★ 8.5</span>
+                <span class="film__genre">Romance</span>
+              </div>
+              <div class="film__info">
+                <h3>In the Mood for Love</h3>
+                <p class="film__meta">Wong Kar-wai · 2000 · Hong Kong</p>
+                <p>Puisi visual tentang cinta yang tak terucap dan penuh kerinduan.</p>
+                <a href="#" class="film__link">Baca Ulasan →</a>
+              </div>
+            </article>
+
+            <article class="film__card">
+              <div class="film__poster film__poster--6">
+                <span class="film__rating">★ 8.4</span>
+                <span class="film__genre">Drama</span>
+              </div>
+              <div class="film__info">
+                <h3>Bicycle Thieves</h3>
+                <p class="film__meta">De Sica · 1948 · Italia</p>
+                <p>Kisah ayah dan anak yang menyentuh hati, ikon neorealisme Italia.</p>
+                <a href="#" class="film__link">Baca Ulasan →</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- GENRE SECTION -->
+      <section class="section section--gelap" id="genre">
+        <div class="container">
+          <h2 class="section__judul">Jelajah per Genre</h2>
+          <p class="section__deskripsi">Temukan film sesuai mood kamu hari ini.</p>
+
+          <div class="genre__grid">
+            <a href="#" class="genre__item">🎭 Drama <span>430 film</span></a>
+            <a href="#" class="genre__item">🔪 Thriller <span>312 film</span></a>
+            <a href="#" class="genre__item">🚀 Sci-Fi <span>298 film</span></a>
+            <a href="#" class="genre__item">✨ Animasi <span>187 film</span></a>
+            <a href="#" class="genre__item">👁 Horror <span>265 film</span></a>
+            <a href="#" class="genre__item">📽 Dokumenter <span>201 film</span></a>
+            <a href="#" class="genre__item">💌 Romance <span>344 film</span></a>
+            <a href="#" class="genre__item">⚡ Action <span>389 film</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ULASAN SECTION -->
+      <section class="section" id="ulasan">
+        <div class="container">
+          <h2 class="section__judul">Suara Para Penonton</h2>
+          <p class="section__deskripsi">Apa kata mereka tentang film-film pilihan kami.</p>
+
+          <div class="ulasan__grid">
+
+            <article class="ulasan__card">
+              <blockquote>
+                "Parasite bukan sekadar film — ia adalah cermin masyarakat modern yang
+                kejam dan brilian sekaligus."
+              </blockquote>
+              <footer>
+                <strong>Ahmad Rifaldi</strong>
+                <span>Film Critic · Jakarta</span>
+                <span class="ulasan__bintang">★★★★★</span>
+              </footer>
+            </article>
+
+            <article class="ulasan__card">
+              <blockquote>
+                "Tarkovsky mengajarkan bahwa sinema bisa menjadi meditasi. Stalker
+                mengubah cara saya memandang film selamanya."
+              </blockquote>
+              <footer>
+                <strong>Sari Putri</strong>
+                <span>Sineas · Bandung</span>
+                <span class="ulasan__bintang">★★★★★</span>
+              </footer>
+            </article>
+
+            <article class="ulasan__card">
+              <blockquote>
+                "In the Mood for Love mengajarkan bahwa tidak semua cinta harus
+                diucapkan. Sebuah tatapan sudah cukup."
+              </blockquote>
+              <footer>
+                <strong>Budi Nugraha</strong>
+                <span>Penulis · Yogyakarta</span>
+                <span class="ulasan__bintang">★★★★★</span>
+              </footer>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__logo">◈ Cinescope</p>
+        <p>Merayakan seni sinema dari seluruh dunia.</p>
+
+        <nav class="footer__nav">
+          <a href="#">Film Terbaru</a>
+          <a href="#">Klasik Dunia</a>
+          <a href="#">Film Indonesia</a>
+          <a href="#">Tentang Kami</a>
+        </nav>
+
+        <p class="footer__copy">&copy; 2026 Cinescope. Dibuat dengan ❤ untuk para pecinta film.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
